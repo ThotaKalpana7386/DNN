@@ -1,0 +1,13 @@
+torch
+torchvision
+transformers
+datasets
+evaluate
+rouge_score
+nltk
+numpy
+pandas
+matplotlib
+pillow
+pyyaml
+tqdm

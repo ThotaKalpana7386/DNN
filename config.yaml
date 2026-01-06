@@ -1,0 +1,40 @@
+project:
+  name: StoryReasoning-Multimodal
+  version: 1.0
+  author: Thota Kalpana
+  description: Multimodal story reasoning using images and text with contrastive learning
+
+paths:
+  data_dir: data
+  results_dir: results
+  figures_dir: results/figures
+  models_dir: results/models
+
+dataset:
+  source: huggingface
+  name: daniel3303/StoryReasoning
+  split: train
+  dataset_size: 300
+  streaming: true
+  max_seq_len: 4
+  max_text_len: 32
+
+training:
+  batch_size: 2
+  epochs: 3
+  learning_rate: 0.0001
+  optimizer: AdamW
+  lambda_contrastive: 0.5
+  device: cpu
+
+model:
+  visual_encoder: resnet18
+  text_encoder: distilbert-base-uncased
+  embed_dim: 256
+  hidden_dim: 512
+  vocab_size: 30522
+
+logging:
+  save_plots: true
+  save_samples: true
+  verbose: true
